@@ -8,6 +8,10 @@ const List = ({user}) => {
                 <td>tdfghfh</td>
                 <td>tfghgfh</td>
                 <td>tgfhfghgf</td>
+                <td><button type="button" class="btn btn-success me-2">Edit</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+</td>
+
             </tr>
        
     );
