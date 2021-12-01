@@ -1,20 +1,25 @@
 import React,{useState} from 'react';
-
+import shortid from 'shortid'
 const Registration = () => {
-    const[inputField, setinputField]=useState({
+    const[inputField,setinputField]=useState({
         name:'',
         email:'',
-        phone:''
+        phone:'',
     })
     const inputHandler=(e)=>{
-        setinputField({...inputField,[e.target.name]:e.target.value})
+        setinputField( {...inputField, [e.target.name]:e.target.value })
     }
 
-    const submitButton=async()=>{
+console.log(inputField)
 
+
+    const submitButton =  (e)=>{
+          //  e.preventDefault()
+      Object.assign(inputField,{id:shortid.generate()})
+         console.log(inputField);
     }
     return (
-        <div>
+      <div className="container mt-4">
             <form>
             <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Name</label>
@@ -23,17 +28,16 @@ const Registration = () => {
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value={inputField.email} onChange={inputHandler}/>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Phone</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="phone" value={inputField.phone} onChange={inputHandler} />
+    <input type="text" class="form-control" id="exampleInputPassword1" onChange={inputHandler} name="phone" value={inputField.phone} />
   </div>
-  <div class="mb-3 form-check">
+  {/* <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  </div> */}
+  <button onClick={submitButton} type="button" class="btn btn-primary">Register</button>
 </form>
         </div>
     );

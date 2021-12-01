@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-
+import {Link} from 'react-router-dom'
 const Nav = () => {
     return (
-        <div>
+       
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -16,7 +16,7 @@ const Nav = () => {
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <Link to="/registration" class="nav-link active" aria-current="page" href="#">Register</Link>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,7 +40,7 @@ const Nav = () => {
     </div>
   </div>
 </nav>
-        </div>
+       
     );
 };
 

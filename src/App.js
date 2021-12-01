@@ -11,9 +11,11 @@ import {
 import Home from './components/Home';
 import EditUser from './components/EditUser';
 import Registration from './components/Registration';
-
+import {Provider} from 'react-redux';
+import store from './Redux/Store'
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       <Nav/>
     <Switch>
@@ -29,6 +31,7 @@ function App() {
       </Route>
     </Switch>
     </Router>
+    </Provider>
   );
 }
 

@@ -1,11 +1,12 @@
 import React from 'react';
 import List from './List';
-
+import { useSelector } from 'react-redux';
 const Home = () => {
-    const userList=[{ 
-        id:1,
-        name:'test'
-    }]
+      const userList=useSelector((state)=>{
+          return state.user.items
+      })
+
+    
     return (
         <div className="Container">
             <table  class="table">
