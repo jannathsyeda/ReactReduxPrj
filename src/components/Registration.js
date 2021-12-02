@@ -1,6 +1,11 @@
 import React,{useState} from 'react';
-import shortid from 'shortid'
+import {useHistory} from 'react-router-dom'
+import shortid from 'shortid'; 
+import {useDispatch} from 'react-redux';
+import {userRegister} from '../Redux/AllAction'
 const Registration = () => {
+  const dispatch=useDispatch()
+  const history=useHistory()
     const[inputField,setinputField]=useState({
         name:'',
         email:'',
@@ -16,7 +21,9 @@ console.log(inputField)
     const submitButton =  (e)=>{
           //  e.preventDefault()
       Object.assign(inputField,{id:shortid.generate()})
-         console.log(inputField);
+      dispatch(userRegister(inputField))
+        //  console.log(inputField);
+        history.push('/')
     }
     return (
       <div className="container mt-4">
