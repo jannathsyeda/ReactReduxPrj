@@ -7,6 +7,12 @@ const userReducer=(state='',action)=>{
                 ...state,
                 items:[...state.items,action.payload]
             }
+            case 'DELETE_USER':
+                console.log(state,'=====',action)
+                return{
+                    ...state,
+                    items:state.items.filter((user)=>user.id != action.payload)
+                }
             default:
                 return state
     }
