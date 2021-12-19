@@ -14,7 +14,7 @@ export const deleteUser=(id)=>{
 
 export const userInfo=(id)=>{
     return{
-        type:'USER_USER',
+        type:'USER_INFO',
         payload:id
     }
 }

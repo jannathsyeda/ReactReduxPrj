@@ -23,9 +23,9 @@ function App() {
             <Home/>
     </Route>
      
-      <Route path="/edituser/:id" >
-        <EditUser/>
-        </Route>
+      <Route path='/edit-user/:id' component={EditUser}/>
+        {/* <EditUser/>
+        </Route> */}
       <Route path="/registration">
         <Registration/>
       </Route>

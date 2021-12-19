@@ -1,11 +1,21 @@
 import React from 'react';
 import List from './List';
 import { useSelector } from 'react-redux';
+// import Table from './table';
+
+import DummyData from './DummyData';
+import Table from './Table';
 const Home = () => {
       const userList=useSelector((state)=>{
           return state.user.items
       })
 
+    const col=
+        {
+        id:"id",
+        name:"name",
+        age:"age"
+    }
     
     return (
         <div className="Container">
@@ -32,6 +42,9 @@ const Home = () => {
                 </tbody>
             </table>
 
+
+
+  {!DummyData && <Table  col={col} DummyData={DummyData}/>}
             
         </div>
     );
